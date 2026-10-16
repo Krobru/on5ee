@@ -101,3 +101,12 @@
 }
 
 .lcd-ex{font:600 .72rem/1.2 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;color:#8cc6ff;opacity:.85;margin-top:2px}
+
+/* formulaire QSL */
+.qslform{max-width:760px;margin:0 auto}
+.qslform h3{margin:0 0 6px;color:#e6f4ff;font-family:var(--mono)}
+.qrow{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px}
+.qslform select{width:100%;font:inherit}
+#q-call{text-transform:uppercase;font-family:var(--mono)}
+.qsl-grid b.live{color:#7dd3ff;text-shadow:0 0 8px rgba(77,163,255,.7)}
+@media(max-width:560px){.qrow{grid-template-columns:1fr}}
