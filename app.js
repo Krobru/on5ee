@@ -57,7 +57,7 @@ function tick(force){
   if(force===true||d.getSeconds()%10===0||!tick.done){
     var s=sun(d,HOME.lat,HOME.lon),st;
     if(s.el>6)st=L('☀️ Jour','☀️ Day');else if(s.el>-6)st=L('🌗 Ligne grise','🌗 Grey line');else st=L('🌙 Nuit','🌙 Night');
-    $('#sunstate').textContent=st+' · '+fr(s.el,1)+'°';
+    $('#sunstate').textContent=st+L(' · soleil à ',' · sun at ')+fr(s.el,1)+'°'+(s.el<0?L(" (sous l'horizon)",' (below horizon)'):'');
     if(s.rise!==null)$('#suntimes').textContent=L('Lever ','Sunrise ')+hm(s.rise)+L(' · Coucher ',' · Sunset ')+hm(s.set)+' UTC';
     var x=0.5+((s.mins-s.noon+2160)%1440-720)/1440;$('#sunmark').style.left=(Math.max(0,Math.min(1,x))*100)+'%';
     tick.done=true;
@@ -174,3 +174,10 @@ $$('.chip').forEach(function(c){c.addEventListener('click',function(){
 })});
 if(window.I18N)I18N.on(function(){tick(true);offs();mll();calcLoc();showCode();setMenu(menu.classList.contains('open'))});
 })();
+
+/* ---------- Température Wavre (Open-Meteo, sans clé, sans cookie) ---------- */
+(function(){var el=document.getElementById('wxtemp');if(!el||!window.fetch)return;
+function wx(){fetch('https://api.open-meteo.com/v1/forecast?latitude=50.717&longitude=4.601&current=temperature_2m',{credentials:'omit',referrerPolicy:'no-referrer',cache:'no-store'})
+.then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){var t=j&&j.current&&j.current.temperature_2m;if(typeof t!=='number'||!isFinite(t))throw 0;var v=Math.round(t);if(v===0)v=0;el.textContent=v+'\u00a0°C'})
+.catch(function(){el.textContent='—'})}
+wx();setInterval(wx,18e5)})();
