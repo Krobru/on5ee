@@ -223,7 +223,7 @@ Mode  FM (12K0F3E) + C4FM (System Fusion)</div>
           <span class="qsl-call">ON5EE</span>
           <span class="qsl-sub" data-en="Belgium · Walloon Brabant · JO20GQ">Belgique · Brabant wallon · JO20GQ</span>
           <span class="qsl-waves" aria-hidden="true"></span>
-          <span class="qsl-grid"><span><i data-en="To radio">À la station</i><b>________</b></span><span><i>Date</i><b>__/__/____</b></span><span><i>UTC</i><b>__:__</b></span><span><i>MHz</i><b>______</b></span><span><i>Mode</i><b>____</b></span><span><i>RST</i><b>___</b></span></span>
+          <span class="qsl-grid"><span><i data-en="To radio">À la station</i><b id="qv-call">________</b></span><span><i>Date</i><b id="qv-date">__/__/____</b></span><span><i>UTC</i><b id="qv-utc">__:__</b></span><span><i>MHz</i><b id="qv-freq">______</b></span><span><i>Mode</i><b id="qv-mode">____</b></span><span><i>RST</i><b id="qv-rst">___</b></span></span>
           <span class="qsl-flip small" data-en="↻ Click to flip">↻ Cliquez pour retourner</span>
         </span>
         <span class="qsl-face qsl-back">
@@ -234,7 +234,32 @@ Mode  FM (12K0F3E) + C4FM (System Fusion)</div>
       </span>
     </button>
   </div>
-  <p class="small reveal" style="text-align:center" data-en="For any question about a QSL, please use the <a href=&quot;#contact&quot;>contact form</a>.">Pour toute question concernant une QSL, utilisez le <a href="#contact">formulaire de contact</a>.</p>
+  <form class="glass card reveal qslform" id="qslform" action="https://formsubmit.co/bruno@on5ee.be" method="POST">
+    <h3 data-en="📻 Confirm a QSO — e-QSL request">📻 Confirmer un QSO — demande d'e-QSL</h3>
+    <p class="small" data-en="Fill in your QSO details: the card above updates live. Date and UTC time are filled in automatically (editable).">Remplissez les détails de votre QSO : la carte ci-dessus se met à jour en direct. La date et l'heure UTC sont remplies automatiquement (modifiables).</p>
+    <input type="hidden" name="_subject" id="qslsubj" value="QSL ON5EE">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://on5ee.be/merci.html">
+    <input type="hidden" name="type" value="QSL">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="qrow">
+      <div><label for="q-call" data-en="Your callsign *">Votre indicatif *</label><input id="q-call" name="indicatif" required maxlength="15" pattern="[A-Za-z0-9/]{3,15}" autocapitalize="characters" spellcheck="false"></div>
+      <div><label for="q-name" data-en="Name">Nom</label><input id="q-name" name="nom" maxlength="60" autocomplete="name"></div>
+      <div><label for="q-qth" data-en="QTH / locator">QTH / locator</label><input id="q-qth" name="qth_locator" maxlength="60"></div>
+      <div><label for="q-email" data-en="E-mail (optional, for a reply)">E-mail (facultatif, pour réponse)</label><input id="q-email" type="email" name="email" autocomplete="email"></div>
+      <div><label for="q-date" data-en="Date (UTC)">Date (UTC)</label><input id="q-date" type="date" name="date_utc" required></div>
+      <div><label for="q-utc" data-en="Time (UTC)">Heure (UTC)</label><input id="q-utc" type="time" name="heure_utc" required></div>
+      <div><label for="q-freq" data-en="Band / frequency (MHz)">Bande / fréquence (MHz)</label><input id="q-freq" name="bande_frequence" maxlength="20" placeholder="14.200 / 20m"></div>
+      <div><label for="q-mode">Mode</label><select id="q-mode" name="mode"><option>SSB</option><option>FM</option><option>CW</option><option>C4FM</option><option>DMR</option><option>FT8</option><option>FT4</option><option>RTTY</option><option>AM</option><option data-en="Other">Autre</option></select></div>
+      <div><label for="q-rsts" data-en="RST sent">RST envoyé</label><input id="q-rsts" name="rst_envoye" maxlength="4" placeholder="59"></div>
+      <div><label for="q-rstr" data-en="RST received">RST reçu</label><input id="q-rstr" name="rst_recu" maxlength="4" placeholder="59"></div>
+    </div>
+    <label for="q-com" data-en="Comment">Commentaire</label><textarea id="q-com" name="commentaire" maxlength="1000"></textarea>
+    <p class="small" data-en="Your data is used only to confirm the QSO and, if you wish, to reply to you. See the <a href=&quot;mentions-legales.html#gdpr&quot;>legal notice</a>. Paper QSL: via the UBA bureau.">Vos données servent uniquement à confirmer le QSO et, si vous le souhaitez, à vous répondre. Voir les <a href="mentions-legales.html#rgpd">mentions légales</a>. QSL papier : via le bureau UBA.</p>
+    <button class="btn" type="submit" data-en="Send my QSL ➜">Envoyer ma QSL ➜</button>
+  </form>
+
 </div></section>
 
 <section id="liens"><div class="wrap">
@@ -301,7 +326,7 @@ Mode  FM (12K0F3E) + C4FM (System Fusion)</div>
 <section id="contact"><div class="wrap">
   <h2 class="reveal"><span class="n">08 /</span>Contact</h2>
   <p class="lead reveal" data-en="A question, a signal report on the repeater, a QSL request? Write to me using this form.">Une question, un rapport d'écoute sur le relais, une demande de QSL ? Écrivez-moi via ce formulaire.</p>
-  <form class="glass card reveal" action="https://formsubmit.co/krobru@gmail.com" method="POST">
+  <form class="glass card reveal" action="https://formsubmit.co/bruno@on5ee.be" method="POST">
     <input type="hidden" name="_subject" value="Nouveau message depuis le site ON5EE" data-en-value="New message from the ON5EE website">
     <input type="hidden" name="_captcha" value="true">
     <input type="hidden" name="_template" value="table">
@@ -331,7 +356,7 @@ Mode  FM (12K0F3E) + C4FM (System Fusion)</div>
 
 <footer><div class="wrap">
   <div class="seventy" data-en="73 de ON5EE">73 de ON5EE</div>
-  <div>© <span id="yr">2026</span> ON5EE · <span data-en="Personal non-commercial website">Site personnel non commercial</span> · <a href="mentions-legales.html" data-en="Legal notice">Mentions légales</a></div>
+  <div>© <span id="yr">2026</span> ON5EE · <span data-en="Personal non-commercial website">Site personnel non commercial</span> · <a href="mentions-legales.html" data-en="Legal notice">Mentions légales</a> · <a href="partager.html" data-en="Share this website">Partager ce site</a></div>
 </div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="i18n.js"></script>

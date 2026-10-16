@@ -81,6 +81,19 @@ $('#ptt').addEventListener('click',function(){
 });
 /* Modules rack : boutons et LED */
 $$('#gear .card').forEach(function(c){var k=document.createElement('span');k.className='rk';k.setAttribute('aria-hidden','true');var l=document.createElement('span');l.className='rled';l.setAttribute('aria-hidden','true');l.style.animationDelay=(Math.random()*3).toFixed(2)+'s';c.appendChild(l);c.appendChild(k)});
+/* Formulaire QSL interactif */
+(function(){var f=$('#qslform');if(!f)return;var g=function(i){return document.getElementById(i)};
+var pad=function(n){return(n<10?'0':'')+n},touched={};
+function now(){var d=new Date();if(!touched.d)g('q-date').value=d.getUTCFullYear()+'-'+pad(d.getUTCMonth()+1)+'-'+pad(d.getUTCDate());if(!touched.t)g('q-utc').value=pad(d.getUTCHours())+':'+pad(d.getUTCMinutes());upd()}
+function set(id,v,ph){var b=g(id);b.textContent=v||ph;b.classList.toggle('live',!!v)}
+function upd(){var c=g('q-call').value.toUpperCase().trim();var dv=g('q-date').value.split('-');
+set('qv-call',c,'________');set('qv-date',dv.length===3?dv[2]+'/'+dv[1]+'/'+dv[0]:'','__/__/____');set('qv-utc',g('q-utc').value,'__:__');
+set('qv-freq',g('q-freq').value.trim(),'______');set('qv-mode',g('q-mode').value,'____');set('qv-rst',g('q-rsts').value.trim(),'___');
+g('qslsubj').value='QSL ON5EE de '+(c||'?')}
+g('q-date').addEventListener('input',function(){touched.d=1});g('q-utc').addEventListener('input',function(){touched.t=1});
+f.addEventListener('input',upd);f.addEventListener('change',upd);
+f.addEventListener('submit',function(){g('q-call').value=g('q-call').value.toUpperCase().trim();upd()});
+now();setInterval(now,15000)})();
 /* Carte QSL */
 var q=$('#qslcard');q.addEventListener('click',function(){q.setAttribute('aria-pressed',q.getAttribute('aria-pressed')==='true'?'false':'true')});
 /* Easter egg : « CQ » ou code Konami */
