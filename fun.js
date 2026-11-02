@@ -92,6 +92,8 @@ set('qv-freq',g('q-freq').value.trim(),'______');set('qv-mode',g('q-mode').value
 g('qslsubj').value='QSL ON5EE de '+(c||'?')}
 g('q-date').addEventListener('input',function(){touched.d=1});g('q-utc').addEventListener('input',function(){touched.t=1});
 f.addEventListener('input',upd);f.addEventListener('change',upd);
+f.setAttribute('novalidate','');var msg=document.createElement('p');msg.className='small';msg.setAttribute('role','alert');msg.style.color='#ff8080';f.appendChild(msg);
+f.addEventListener('submit',function(e){g('q-call').value=g('q-call').value.toUpperCase().trim();var bad=f.querySelector(':invalid');if(bad){e.preventDefault();var en=document.documentElement.lang==='en';var lab=f.querySelector('label[for="'+bad.id+'"]');msg.textContent=(en?'Please check the field: ':'Vérifiez le champ : ')+(lab?lab.textContent.replace(' *',''):bad.name)+(en?' (callsign: letters, digits and / only).':' (indicatif : lettres, chiffres et / uniquement).');bad.focus();return}msg.textContent='';});
 f.addEventListener('submit',function(){g('q-call').value=g('q-call').value.toUpperCase().trim();upd()});
 now();setInterval(now,15000)})();
 /* Carte QSL */
