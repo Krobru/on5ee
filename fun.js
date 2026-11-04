@@ -104,7 +104,7 @@ document.addEventListener('keydown',function(e){
   var tg=e.target,tag=tg&&tg.tagName;if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||(tg&&tg.isContentEditable))return;
   if(e.key===kon[ki]||(kon[ki].length===1&&e.key.toLowerCase()===kon[ki])){ki++;if(ki===kon.length){ki=0;party()}}else ki=(e.key===kon[0])?1:0;
   if(tg===vfo)return;
-  if(e.key&&e.key.length===1){buf=(buf+e.key.toUpperCase()).slice(-2);if(buf==='CQ'){buf='';party()}}
+  if(e.key&&e.key.length===1){buf=(buf+e.key.toUpperCase()).slice(-2);if(buf==='CQ'){buf='';party();setTimeout(function(){var s=document.getElementById('qsl');if(s)s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});var c=document.getElementById('q-call');if(c)setTimeout(function(){c.focus({preventScroll:true})},reduce?0:900)},reduce?0:1200)}}
 });
 function toast(t){var e=$('#toast');if(!e)return;e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(function(){e.classList.remove('show')},2600)}
 function party(){
