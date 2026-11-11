@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="fun.css">
 <link rel="stylesheet" href="illu.css">
+<link rel="stylesheet" href="etude-antenne.css">
+<link rel="stylesheet" href="propagation.css">
 </head>
 <body>
 <a class="skip" href="#main" data-en="Skip to content">Aller au contenu</a>
@@ -21,6 +23,7 @@
   <nav id="menu" aria-label="Navigation principale" data-en-aria-label="Main navigation"><ul>
     <li><a href="#apropos" data-en="About">À propos</a></li>
     <li><a href="#station">Station</a></li>
+    <li><a href="#propagation" data-en="Propagation">Propagation</a></li>
     <li><a href="#relais" data-en="ON0BTS repeater">Relais ON0BTS</a></li>
     <li><a href="#outils" data-en="Tools">Outils</a></li>
     <li><a href="#websdr">WebSDR</a></li>
@@ -123,7 +126,7 @@
     <div class="glass card reveal" data-t="hf vu"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="st" x="18" y="6" width="12" height="20" rx="6"/><path class="st" d="M24 26v10M14 42h20M16 36h16"/><circle class="k" cx="24" cy="14" r="1.8"/></svg><span class="role" data-en="Station · Microphone">Station · Micro</span><span class="name">Yaesu M-70</span><span class="small" data-en="Desktop microphone">Micro de table</span><div class="tags"><span class="tag">SSB</span><span class="tag">FM</span></div></div>
     <div class="glass card reveal" data-t="hf"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="st" x="4" y="12" width="40" height="24" rx="3"/><rect x="9" y="17" width="16" height="8" rx="1" fill="#0a1a33" stroke="#4da3ff"/><circle class="st" cx="35" cy="24" r="6"/><circle class="k" cx="12" cy="31" r="1.6"/></svg><span class="role" data-en="HF · Base station">HF · Station fixe</span><span class="name">Yaesu FT-710</span><div class="tags"><span class="tag">HF</span></div></div>
     <div class="glass card reveal" data-t="hf"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="st" x="4" y="14" width="40" height="20" rx="3"/><path class="st" d="M10 28l4-8 4 8 4-8 4 8"/><circle class="k" cx="37" cy="24" r="2"/></svg><span class="role" data-en="HF · Tuner">HF · Accord</span><span class="name">MFJ-939</span><span class="small" data-en="Automatic antenna tuner (MFJ Plug & Play IntelliTuner)">Boîte d'accord automatique (MFJ Plug & Play IntelliTuner)</span><div class="tags"><span class="tag">HF</span></div></div>
-    <div class="glass card reveal" data-t="hf"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path class="st" d="M6 42V10M42 42V6M6 12Q24 22 42 8"/><circle class="k" cx="24" cy="16" r="2"/></svg><span class="role" data-en="HF · Antenna">HF · Antenne</span><span class="name">End-fed 20 m</span><span class="small" data-en="Home-made">Fait maison</span><div class="tags"><span class="tag">HF</span></div></div>
+    <div class="glass card reveal card-etude" id="card-efhw" data-t="hf" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="etude-efhw" aria-expanded="false" aria-label="End-fed 20 m : ouvrir l'étude de rayonnement" data-en-aria-label="End-fed 20 m: open the radiation study"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path class="st" d="M6 42V10M42 42V6M6 12Q24 22 42 8"/><circle class="k" cx="24" cy="16" r="2"/></svg><span class="role" data-en="HF · Antenna">HF · Antenne</span><span class="name">End-fed 20 m</span><span class="small" data-en="Home-made EFHW">EFHW · Fait maison</span><div class="tags"><span class="tag">HF</span></div><span class="etude-hint" data-en="Radiation study ›">Étude de rayonnement ›</span></div>
     <div class="glass card reveal" data-t="hf vu portable"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="st" x="6" y="16" width="36" height="20" rx="4"/><path class="st" d="M14 16V6"/><rect x="10" y="20" width="14" height="6" fill="#0a1a33" stroke="#4da3ff"/><circle class="k" cx="34" cy="26" r="2"/></svg><span class="role">Portable / QRP</span><span class="name">Yaesu FT-818</span><span class="small" data-en="All-mode HF/VHF/UHF">Tous modes HF/VHF/UHF</span><div class="tags"><span class="tag">HF</span><span class="tag">VHF</span><span class="tag">UHF</span><span class="tag">QRP</span></div></div>
     <div class="glass card reveal" data-t="vu mobile"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="st" x="4" y="16" width="40" height="18" rx="3"/><rect x="8" y="20" width="20" height="7" fill="#0a1a33" stroke="#4da3ff"/><circle class="st" cx="36" cy="25" r="4"/><circle class="k" cx="10" cy="31" r="1.4"/></svg><span class="role">Mobile</span><span class="name">Yaesu FTM-300D</span><span class="small" data-en="Dual-band VHF/UHF">Bibande VHF/UHF</span><div class="tags"><span class="tag">VHF</span><span class="tag">UHF</span></div></div>
     <div class="glass card reveal" data-t="vu mobile num"><svg class="gico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="st" x="4" y="16" width="40" height="18" rx="3"/><rect x="8" y="20" width="20" height="7" fill="#0a1a33" stroke="#4da3ff"/><circle class="st" cx="36" cy="25" r="4"/><circle class="k" cx="10" cy="31" r="1.4"/></svg><span class="role">Mobile</span><span class="name">AnyTone AT-D578</span><span class="small">DMR/FM</span><div class="tags"><span class="tag">DMR</span><span class="tag">FM</span></div></div>
@@ -137,6 +140,17 @@
     <div class="glass fact"><b data-en="Bands">Bandes</b><span data-en="HF, VHF and UHF">HF, VHF et UHF</span></div>
     <div class="glass fact"><b>Modes</b><span data-en="FM and digital modes (C4FM, D-STAR, DMR)">FM et modes numériques (C4FM, D-STAR, DMR)</span></div>
     <div class="glass fact"><b>Locator</b><span class="mono">JO20GQ</span></div>
+  </div>
+  <div class="prop-panel glass reveal" id="propagation">
+    <div class="prop-head">
+      <h3 data-en="Open HF bands">Bandes HF ouvertes</h3>
+      <p class="prop-updated" id="prop-updated"></p>
+    </div>
+    <p class="prop-lead" data-en="Day and night conditions, updated hourly. Your browser only loads a file from this website — no third-party request.">Conditions de jour et de nuit, mises à jour toutes les heures. Votre navigateur ne charge qu'un fichier de ce site — aucune requête vers un tiers.</p>
+    <div id="prop-body">
+      <p class="prop-wait" data-en="Loading…">Chargement…</p>
+    </div>
+    <p class="prop-credit" data-en="Calculated band conditions: N0NBH (hamqsl.com). Solar indices: N0NBH / NOAA SWPC.">Conditions de bandes calculées par N0NBH (hamqsl.com). Indices solaires : N0NBH / NOAA SWPC.</p>
   </div>
 </div></section>
 
@@ -383,11 +397,86 @@ Mode  FM (12K0F3E) + C4FM (System Fusion)</div>
   <div class="seventy" data-en="73 de ON5EE">73 de ON5EE</div>
   <div>© <span id="yr">2026</span> ON5EE · <span data-en="Personal non-commercial website">Site personnel non commercial</span> · <a href="mentions-legales.html" data-en="Legal notice">Mentions légales</a> · <a href="partager.html" data-en="Share this website">Partager ce site</a></div>
 </div></footer>
+<dialog class="etude" id="etude-efhw" aria-labelledby="etude-title">
+  <div class="etude-box">
+    <div class="etude-head">
+      <h2 id="etude-title"><span class="etude-kicker">ON5EE · JO20GQ · <span data-en="Wavre area">région de Wavre</span></span><span data-en="My EFHW antenna — radiation study">Mon antenne EFHW — étude de rayonnement</span></h2>
+      <button class="etude-close" type="button" data-etude-close aria-label="Fermer" data-en-aria-label="Close">×</button>
+    </div>
+    <div class="etude-body">
+      <table class="etude-specs">
+        <tbody>
+          <tr><th data-en="Type">Type</th><td data-en="End-fed half-wave (EFHW) with a 49:1 transformer">Antenne EFHW (end-fed half-wave) avec transfo 49:1</td></tr>
+          <tr><th data-en="Wire">Fil</th><td data-en="About 20 m of wire, then a coil, then 2 m of wire">Environ 20 m de fil, puis une self, puis 2 m de fil</td></tr>
+          <tr><th data-en="Height">Hauteur</th><td data-en="Transformer at 6–7 m, far end at 4 m (average ≈ 5 m)">Transfo à 6–7 m, extrémité à 4 m (moyenne ≈ 5 m)</td></tr>
+          <tr><th data-en="Orientation">Orientation</th><td data-en="Wire stretched north–south, end to the south">Fil tendu du nord au sud, extrémité au sud</td></tr>
+          <tr><th data-en="Bands">Bandes</th><td data-en="80, 40, 20, 15 and 10 m without a tuner; 17 and 12 m with the tuner">80, 40, 20, 15 et 10 m sans boîte d'accord ; 17 et 12 m avec la boîte d'accord</td></tr>
+        </tbody>
+      </table>
+
+      <div class="etude-bands" role="group" aria-label="Choisir une bande" data-en-aria-label="Choose a band">
+        <button type="button" data-band="8040" aria-pressed="true">80 / 40 m</button>
+        <button type="button" data-band="20" aria-pressed="false">20 m</button>
+        <button type="button" data-band="hi" aria-pressed="false">17 / 15 / 10 m</button>
+      </div>
+      <p class="etude-bandtxt" data-band-panel="8040" data-en="On 80 and 40 m the radiation is nearly vertical (NVIS): Belgium and neighbouring countries, out to about 0–600 km.">Sur 80 et 40 m, le rayonnement est presque vertical (NVIS) : la Belgique et les pays voisins, dans un rayon d'environ 0 à 600 km.</p>
+      <p class="etude-bandtxt" data-band-panel="20" hidden data-en="On 20 m, four diagonal lobes (NE, SE, SW, NW), for example towards the US East Coast, Scandinavia and Russia, the Middle East, the Canaries and West Africa.">Sur 20 m, quatre lobes en diagonale (NE, SE, SO, NO), par exemple vers la côte Est des États-Unis, la Scandinavie et la Russie, le Moyen-Orient, les Canaries et l'Afrique de l'Ouest.</p>
+      <p class="etude-bandtxt" data-band-panel="hi" hidden data-en="On 17, 15 and 10 m the lobes point north and south; south, towards Africa, is the most favourable direction.">Sur 17, 15 et 10 m, des lobes vers le nord et le sud ; le sud, vers l'Afrique, est la direction la plus favorable.</p>
+
+      <h3 class="etude-sub" id="etude-diagrammes" data-en="Diagrams">Diagrammes</h3>
+      <div class="etude-gallery" id="etude-gallery">
+        <figure class="etude-shot">
+          <button type="button" data-full="images/carte_contacts_on5ee.webp" aria-label="Agrandir : carte des zones de contact" data-en-aria-label="Enlarge: contact zones map">
+            <img src="images/carte_contacts_on5ee.webp" width="1196" height="1122" loading="lazy" decoding="async" alt="Carte du monde centrée sur la station, zones de contact possibles par bande / World map centred on the station, possible contact zones by band">
+          </button>
+          <figcaption data-en="World map centred on the station: possible contact zones by band.">Carte du monde centrée sur la station : zones de contact possibles par bande.</figcaption>
+        </figure>
+        <figure class="etude-shot">
+          <button type="button" data-full="images/antenne_3d_on5ee.webp" aria-label="Agrandir : rayonnement en 3D" data-en-aria-label="Enlarge: 3D radiation patterns">
+            <img src="images/antenne_3d_on5ee.webp" width="1575" height="1050" loading="lazy" decoding="async" alt="Rayonnement en 3D de l'antenne par bande / 3D radiation pattern of the antenna per band">
+          </button>
+          <figcaption data-en="3D radiation pattern per band (80, 40, 20, 17, 15 and 10 m).">Rayonnement en 3D par bande (80, 40, 20, 17, 15 et 10 m).</figcaption>
+        </figure>
+        <figure class="etude-shot">
+          <button type="button" data-full="images/antenne_azimut_on5ee.webp" aria-label="Agrandir : diagrammes d'azimut" data-en-aria-label="Enlarge: azimuth patterns">
+            <img src="images/antenne_azimut_on5ee.webp" width="1430" height="1045" loading="lazy" decoding="async" alt="Diagrammes d'azimut vus de dessus / Azimuth patterns seen from above">
+          </button>
+          <figcaption data-en="Azimuth patterns seen from above.">Diagrammes vus de dessus, en azimut.</figcaption>
+        </figure>
+        <figure class="etude-shot">
+          <button type="button" data-full="images/horizon_on5ee.webp" aria-label="Agrandir : angle d'horizon" data-en-aria-label="Enlarge: horizon angle">
+            <img src="images/horizon_on5ee.webp" width="1600" height="1309" loading="lazy" decoding="async" alt="Angle d'horizon dû au relief, direction par direction / Horizon angle from terrain, direction by direction">
+          </button>
+          <figcaption data-en="Horizon angle from terrain, direction by direction.">Angle d'horizon dû au relief, direction par direction.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etude-relief">
+        <strong data-en="Terrain">Relief</strong>
+        <span data-en="The station sits at the bottom of the Dyle valley, but the horizon stays under 3.4° in every direction, with a maximum to the north. The south is clear at under 1°, so no band is masked.">La station est au fond de la vallée de la Dyle, mais l'horizon reste sous 3,4° partout, avec un maximum au nord. Le sud est dégagé à moins de 1°, donc aucune bande n'est masquée.</span>
+      </div>
+      <p class="etude-note" data-en="Simplified model, without the effect of the coax or the real ground.">Modèle simplifié, sans l'effet du coaxial ni du sol réel.</p>
+    </div>
+  </div>
+  <div class="etude-lite" hidden>
+    <div class="etude-lite-bar">
+      <button class="etude-close" type="button" data-etude-close aria-label="Fermer l'agrandissement" data-en-aria-label="Close the enlargement">×</button>
+    </div>
+    <button class="etude-lite-nav etude-lite-prev" type="button" aria-label="Image précédente" data-en-aria-label="Previous image">‹</button>
+    <button class="etude-lite-nav etude-lite-next" type="button" aria-label="Image suivante" data-en-aria-label="Next image">›</button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+  </div>
+</dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="i18n.js"></script>
 <script src="app.js" defer></script>
 <script src="fun.js" defer></script>
 <script src="illu.js" defer></script>
+<script src="etude-antenne.js" defer></script>
+<script src="propagation.js" defer></script>
 <canvas id="confetti" aria-hidden="true"></canvas>
 </body>
 </html>
